@@ -2,6 +2,7 @@ const redux = require('redux')
 
 const createStore = redux.createStore
 const CAKE_ORDERED = "CAKE_ORDERED"
+const CAKE_RESTOCKED = "CAKE_RESTOCKED"
 
 function orderCake() {
   return {
@@ -49,8 +50,9 @@ const unsubscribe = store.subscribe(() =>
   console.log('update state', store.getState())
 )
 
-// store.dispatch(orderCake())
-// store.dispatch(orderCake())
-// store.dispatch(orderCake())
+store.dispatch(orderCake())
+store.dispatch(orderCake())
+store.dispatch(orderCake())
+store.dispatch(restockCake(6))
 
 
